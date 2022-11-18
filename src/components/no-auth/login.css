@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+
+
+.container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 63% 37%;
+  height: 834px;
+  max-width: 1194;
+}
+
+.inputsContainer {
+  background-color: #923594;
+  height: 834px;
+  width: 441px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Bayon', sans-serif;
+}
+
+.login-button {
+  background-color: #f47923;
+  width: 204px;
+  height: 52px;
+  border-radius: 20px;
+}
+
+.emailContainer{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 63px
+}
+
+.inputLogin {
+  width: 313px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 10px;
+}
