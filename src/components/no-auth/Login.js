@@ -1,19 +1,23 @@
 import logo from "../../images/logo-carinito.png";
 import "./login.css";
 import { useState } from "react";
-import Auth from "../../api/Auth";
-
+import authUsers from '../../api/authUsers.js'
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-console.log(Auth())
+  const [message, setMessage] = useState(null)
+  
+  const handlePrintMessage=(message)=>{
+    setMessage(message)
+    setTimeout(() => {
+      setMessage(null)
+    }, "5000")
+  }
 
   return (
     <div className="container">
       <img src={logo} alt="logo"></img>
-
       <div className="inputsContainer">
         <div className="emailContainer">
           <input
@@ -21,7 +25,7 @@ console.log(Auth())
             name="email"
             placeholder="E-MAIL"
             className="inputLogin"
-            onChange={(e) =>setEmail(console.log(e.target.value))}
+            onChange={(e) =>setEmail((e.target.value))}
           />
           <input
             type="password"
@@ -30,8 +34,9 @@ console.log(Auth())
             className="inputLogin"
             onChange={(e) =>setPassword(e.target.value)}
           />
-          <button className="login-button">LOG IN</button>
-        </div>
+          <div>{message&&<p>{message}</p>}</div>
+          <button className="login-button" onClick={() => authUsers(email,  password, handlePrintMessage)}>LOG IN</button>
+        </div> 
       </div>
     </div>
   );
