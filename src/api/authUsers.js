@@ -27,8 +27,7 @@ const authUsers = (emailValue, passwordValue, callBack) => {
               callBack("invalid");
             }
           });
-          // return console.log("final",newArray)
-          resolve (console.log("final",newArray))
+          resolve(newArray)
         })
         .catch((err) => {
           console.log(err);
