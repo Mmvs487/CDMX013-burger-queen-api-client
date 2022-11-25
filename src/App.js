@@ -7,16 +7,16 @@ import { useState } from 'react'
 import { redirect } from "react-router-dom";
 
 function App() {
-  const [user, setUser] = useState(null)
-  const handleSaveUser = (oneUser) => {
-    setUser(oneUser)
+  const [rol, setRol] = useState(null)
+  const handleSaveUser = (userRole) => {
+    setRol(userRole)
   }
   return (
     <BrowserRouter>
      <Routes>
-        <Route path="/" element={<Login handleSaveUser={handleSaveUser} user={user}  />}/>
-      <Route path ="/orders" element={<Orders/>}/>
-      <Route path ="/Kitchen" element={<Kitchen/>}/>
+        <Route path="/" element={<Login handleSaveUser={handleSaveUser} rol={rol}  />}/>
+        <Route path="/orders" element={<Orders/>}/>
+      <Route path ="/kitchen" element={<Kitchen/>}/>
       <Route path="/Admin" element={<Admin/>}/>
      </Routes>
     </BrowserRouter>

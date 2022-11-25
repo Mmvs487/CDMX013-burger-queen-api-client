@@ -20,7 +20,7 @@ const authUsers = (emailValue, passwordValue, callBack) => {
             if (data.user !== emailValue) {
               callBack('Invalid credentials, please contact your admin')
             } else if (data.user === emailValue) {
-              newArray.push(data.user)
+              newArray.push(data.role)
               console.log("array", newArray)
               callBack("valid")
             } else {
