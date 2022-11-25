@@ -53,7 +53,7 @@ export default function Login({ handleSaveUser, rol }) {
               className="inputLogin"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <div>{message && <p>{message}</p>}</div>
+            <div className="messageContainer">{message && <p>{message}</p>}</div>
             <button className="login-button" onClick={handleSubmit}>LOG IN</button>
           </div>
         </div>
