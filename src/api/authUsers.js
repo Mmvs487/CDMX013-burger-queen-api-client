@@ -8,7 +8,7 @@ const authUsers = (emailValue, passwordValue, callBack) => {
   return new Promise((resolve, reject) => {
    
     if (emailValue === "" || passwordValue === "") {
-      callBack("Please enter your login credentials");
+      callBack("PLEASE ENTER YOUR LOGIN CREDENTIALS");
       return console.log("invalid");
     } else {
 
