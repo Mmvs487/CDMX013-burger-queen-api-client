@@ -10,7 +10,7 @@ export default function Login({ handleSaveUser, rol }) {
   const [message, setMessage] = useState(null)
 
   const navigate = useNavigate();
-  console.log("rol", rol);
+  console.log("rol", rol)
   
   useEffect(() => {
      if (rol === 'waiter') {
@@ -20,7 +20,7 @@ export default function Login({ handleSaveUser, rol }) {
     } else if (rol === 'admin') {
       navigate('/admin')
     } 
-  })
+  }, [rol])
 
     const handlePrintMessage = (message) => {
       setMessage(message)
