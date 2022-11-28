@@ -22,9 +22,9 @@ const authUsers = (emailValue, passwordValue, callBack) => {
             } else if (data.user === emailValue) {
               newArray.push(data.role)
               console.log("array", newArray)
-              callBack("valid")
+              callBack("VALID")
             } else {
-              callBack("invalid");
+              callBack("INVALID");
             }
           });
           resolve(newArray)
