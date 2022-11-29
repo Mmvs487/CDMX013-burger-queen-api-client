@@ -1,4 +1,4 @@
-import { authBreakfast } from "../../api/authBreakfast"
+import { authBreakfast } from "../api/authBreakfast"
 import { useState, useEffect } from "react";
 
 export default function Menu() {

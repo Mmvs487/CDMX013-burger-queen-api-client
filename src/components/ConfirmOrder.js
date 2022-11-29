@@ -1,8 +1,8 @@
 import React from "react";
 import "./confirm-ord.css";
-import downIcon from '../../images/expand_circle_down.png'
-import upIcon from '../../images/expand_circle_up.png'
-import deleteIcon from '../../images/delete.png'
+import downIcon from '../images/expand_circle_down.png'
+import upIcon from '../images/expand_circle_up.png'
+import deleteIcon from '../images/delete.png'
 import { useState } from "react";
 
 const ConfirmOrder = () => {
