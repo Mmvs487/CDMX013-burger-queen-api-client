@@ -1,7 +1,7 @@
-import ConfirmOrder from "./ConfirmOrder";
+import ConfirmOrder from "../ConfirmOrder";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../Navbar";
-import Menu from './Menu.js'
+import Menu from '../Menu.js'
 
 export default function Orders() {
     const activeUser = localStorage.getItem("email");
@@ -13,10 +13,14 @@ export default function Orders() {
         navigate('/orders')
     }
     return (
-        <div className="container">
-            <Navbar />
-            <ConfirmOrder />
+        <div className="ordersContainer">
+            <header className="navBar">
+                <Navbar />
+            </header>
+            <main className="main">
             <Menu />
+            <ConfirmOrder />
+            </main>            
         </div>
     )
     
