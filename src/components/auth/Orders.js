@@ -1,3 +1,4 @@
+import ConfirmOrder from "./ConfirmOrder";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../Navbar";
 
@@ -11,8 +12,9 @@ export default function Orders() {
         navigate('/orders')
     }
     return(
-    <div id="navbar">
+    <div className="container">
     <Navbar/>
+    <ConfirmOrder/>
     </div>
     )
 }

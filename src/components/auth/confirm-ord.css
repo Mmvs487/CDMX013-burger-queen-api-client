@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Bayon&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+
+.header-ord-list {
+  background-color: #918f99;
+  display: flex;
+  flex-direction: column;
+  width: 515px;
+  padding: 5px 30px;
+  font-family: "Bayon", sans-serif;
+}
+.title-ord-list {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+.data-client {
+  display: flex;
+  align-items: center;
+}
+.data-client > p {
+  font-size: 20px;
+  margin-right: 25px;
+}
+.client-name {
+  width: 164px;
+  height: 30px;
+  background-color: #eeecf7;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.resume {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 78px;
+  background: #e5e4e7;
+  border: 1px solid #bdbcc2;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  padding: 0px 30px;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 50px;
+}
+
+.add-delete-itm {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.total {
+  display: flex;
+  height: 96px;
+  background-color: #bdbcc2;
+  border: 1px solid #928f99;
+  padding: 0px 30px;
+  align-items: center;
+    justify-content: space-between;
+}
+
+.done-btn {
+  width: 203.62px;
+  height: 52px;
+  background-color: #f47923;
+  border-radius: 20px;
+  border: 0px;
+  font-family: "Bayon", sans-serif;
+  font-size: 30px;
+}
+
+.total > p{
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+}
+
+span{
+    font-weight: 400;
+}
