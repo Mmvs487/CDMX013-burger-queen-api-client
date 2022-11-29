@@ -1,18 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "../Navbar";
 
 export default function Orders() {
+    const activeUser = localStorage.getItem("email");
+    console.log(activeUser)
+    const navigate = useNavigate()
+    if (!activeUser){
+        navigate('/')
+    }else{
+        navigate('/orders')
+    }
     return(
-    <div id="container">
-    <header>
-    <Navbar>
-    </Navbar>
-    </header>
-    <div>
-        <nav>
-        <h1>Breakfasts</h1>
-        <h1>Meals</h1>
-        </nav>
-    </div>
+    <div id="navbar">
+    <Navbar/>
     </div>
     )
 }
