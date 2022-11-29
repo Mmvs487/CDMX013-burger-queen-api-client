@@ -1,20 +1,23 @@
-
+import ConfirmOrder from "./ConfirmOrder";
+import { useNavigate } from "react-router-dom";
+import { Navbar } from "../Navbar";
 import Menu from './Menu.js'
 
 export default function Orders() {
-
-    return(
-<div className="container">
-            <Menu/>
-</div>
+    const activeUser = localStorage.getItem("email");
+    console.log(activeUser)
+    const navigate = useNavigate()
+    if (!activeUser) {
+        navigate('/')
+    } else {
+        navigate('/orders')
+    }
+    return (
+        <div className="container">
+            <Navbar />
+            <ConfirmOrder />
+            <Menu />
+        </div>
     )
+    
 }
-
-//Acciones que se van a realizar
-// export const Types = {
-//     AddToCart: "AddToCart",
-//     RemoveOneFromCart: "RemoveOneFromCart", 
-//     RemoveAllFromCart: "RemooveAllFromCart", 
-//     CleanCar: "CleanCar"
-
-// }                                                                                 
