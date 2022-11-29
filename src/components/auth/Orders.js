@@ -1,7 +1,9 @@
+import ConfirmOrder from "./ConfirmOrder";
+
 export default function Orders() {
-    return(
-<div className="container">
-<h1>Create New Order c:</h1>      
-</div>
-    )
+  return (
+    <div className="container">
+      <ConfirmOrder/>
+    </div>
+  );
 }
