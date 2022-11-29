@@ -1,7 +1,20 @@
+
+import Menu from './Menu.js'
+
 export default function Orders() {
+
     return(
 <div className="container">
-<h1>Create New Order c:</h1>      
+            <Menu/>
 </div>
     )
 }
+
+//Acciones que se van a realizar
+// export const Types = {
+//     AddToCart: "AddToCart",
+//     RemoveOneFromCart: "RemoveOneFromCart", 
+//     RemoveAllFromCart: "RemooveAllFromCart", 
+//     CleanCar: "CleanCar"
+
+// }                                                                                 
