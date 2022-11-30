@@ -5,6 +5,5 @@ margin: 0;
 .main{
     display: grid;
     grid-template-columns: 50% 50%;
-    background-color: aqua;
     padding: 28px 42px;
 }

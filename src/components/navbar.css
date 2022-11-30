@@ -6,23 +6,50 @@ body {
 }
 
 .defaults{
+    display: flex;
     gap: 0rem;
     padding: 0 1rem;
+    align-items: center;
+    gap: 2rem;
 }
 
 .log-out{
     margin: 0;
     gap: 0;
+    width: 43px;
+    height: 76px;
+    left: 30px;
+    top: 30.22px;
 }
 
-.page-title{
-    margin: 0;
+.title{
+    align-self: center;
     font-size: 2rem;
+    width: 430px;
+    height: 69px;
+}
+
+.user-email{
+    width: 217px;
+    height: 26px;
+    left: 753px;
+    top: 58.22px;
+    
+    font-family: 'Hind Siliguri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.defaults{
+    display: flex;
+    justify-content: space-around;
 }
 
 .nav{
     height: 98px;
-    background-color: aqua;
     color: black;
     display: flex;
     justify-content: space-between;
