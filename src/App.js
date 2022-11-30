@@ -5,6 +5,7 @@ import Kitchen from './components/auth/Kitchen.js';
 import Admin from './components/auth/Admin.js';
 import { useState } from 'react'
 import { ProtectedRoute } from './components/ProtectedRoute'
+import CompletedOrders from './components/auth/CompletedOrders.js';
 
 function App() {
   const [rol, setRol] = useState(null)
@@ -18,6 +19,11 @@ function App() {
         <Route path="/orders" element={
           <ProtectedRoute rol={rol}>
             <Orders/>
+          </ProtectedRoute>
+        } />
+        <Route path="/completed-orders" element={
+          <ProtectedRoute rol={rol}>
+            <CompletedOrders/>
           </ProtectedRoute>
         } />
         <Route path="/kitchen" element={
