@@ -9,6 +9,7 @@ const ConfirmOrder = () => {
 
   //Pasamos el valor inicial = 0
   const [sumElement, setSumElement] = useState(0);
+  const [total, setTotal] = useState([]);
 
   const addElement = () =>{
     setSumElement(sumElement + 1);
@@ -22,7 +23,13 @@ const ConfirmOrder = () => {
     setSumElement(0);
   }
 
-
+ const totalAccount = () => { 
+  total.push(sumElement)
+  total.reduce(
+    (acc, quantity) => acc + quantity,
+    0,
+  )
+}; 
 
   return (
     <section className="order-list">
@@ -44,7 +51,7 @@ const ConfirmOrder = () => {
       <div className="resume">
         <div className="items">
             <p>Pozole</p>
-            <span>$190.00</span>
+            <span>$ {(190 * sumElement)}</span>
         </div>
         <div className="add-delete-itm">
             <img src={downIcon} alt='down-icon' onClick={subtractElement} />
@@ -54,7 +61,7 @@ const ConfirmOrder = () => {
         </div>
       </div>
       <div className="total">
-        <p>Total: <span>$190.00</span></p>
+        <p>Total: <span>$ {(190 * sumElement)}</span></p>
         <button className="done-btn">DONE</button>
       </div>
     </section>

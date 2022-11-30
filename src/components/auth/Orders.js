@@ -16,7 +16,7 @@ export default function Orders() {
     return (
         <div className="ordersContainer">
             <header className="navbar">
-            <Navbar />
+            <Navbar view='order'/>
             </header>
             <main className="main">
             <Menu />
