@@ -8,9 +8,9 @@ import completedOrdersIcon from "../images/completed-orders-icon.png"
 
 export function Navbar() {
     const navigate = useNavigate();
-    const newOrders = () =>{
+    /* const newOrders = () =>{
         navigate('/orders');
-      }
+      } */
     const completedOrders = () =>{
         navigate('/completed-orders');
     }
