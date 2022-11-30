@@ -19,7 +19,7 @@ export default function Menu() {
                     {products.map(product => (
                         <div className="breakfastDish">
                             <img src={product.avatar} alt='food-icon'></img>
-                            <div>
+                            <div className="containerDish">
                                 <h3>{product.title}</h3>
                                 <p>{product.description}</p>
                             </div>
