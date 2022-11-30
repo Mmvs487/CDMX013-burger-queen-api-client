@@ -8,7 +8,7 @@ import { useState } from "react";
 const ConfirmOrder = () => {
 
   //Pasamos el valor inicial = 0
-  const [sumElement, setSumElement] = useState(0);
+  const [sumElement, setSumElement] = useState(1);
   const [total, setTotal] = useState([]);
 
   const addElement = () =>{
@@ -49,19 +49,19 @@ const ConfirmOrder = () => {
         </div>
       </div>
       <div className="resume">
-        <div className="items">
-            <p>Pozole</p>
-            <span>$ {(190 * sumElement)}</span>
-        </div>
-        <div className="add-delete-itm">
+          <div className="items">
+            <p>Huevos Rancheros</p>
+            <span>$ {(55 * sumElement)}</span>
+          </div>
+          <div className="add-delete-itm">
             <img src={downIcon} alt='down-icon' onClick={subtractElement} />
             <p>{sumElement}</p>
-            <img src={upIcon} alt="up-icon" onClick={addElement}/>
-            <img src={deleteIcon} alt="delete-icon" onClick={deleteElement}/>
+            <img src={upIcon} alt="up-icon" onClick={addElement} />
+            <img src={deleteIcon} alt="delete-icon" onClick={deleteElement} />
         </div>
       </div>
       <div className="total">
-        <p>Total: <span>$ {(190 * sumElement)}</span></p>
+        <p>Total: <span>$ {(55 * sumElement)}</span></p>
         <button className="done-btn">DONE</button>
       </div>
     </section>
