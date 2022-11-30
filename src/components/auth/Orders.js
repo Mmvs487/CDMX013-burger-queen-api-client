@@ -2,6 +2,7 @@ import ConfirmOrder from "../ConfirmOrder";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../Navbar";
 import Menu from '../Menu.js'
+import "./orders.css"
 
 export default function Orders() {
     const activeUser = localStorage.getItem("email");
@@ -14,13 +15,13 @@ export default function Orders() {
     }
     return (
         <div className="ordersContainer">
-            <header className="navBar">
-                <Navbar />
+            <header className="navbar">
+            <Navbar />
             </header>
             <main className="main">
             <Menu />
             <ConfirmOrder />
-            </main>            
+            </main>
         </div>
     )
     
