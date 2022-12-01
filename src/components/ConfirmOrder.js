@@ -10,6 +10,7 @@ const ConfirmOrder = () => {
   //Pasamos el valor inicial = 0
   const [sumElement, setSumElement] = useState(1);
   const [total, setTotal] = useState([]);
+ 
 
   const addElement = () =>{
     setSumElement(sumElement + 1);

@@ -4,7 +4,7 @@ import { Navbar } from "../Navbar";
 import Menu from '../Menu.js'
 import "./orders.css"
 
-export default function Orders() {
+export default function Orders({ handleSaveUser }) {
     const activeUser = localStorage.getItem("email");
     console.log(activeUser)
     const navigate = useNavigate()
@@ -16,7 +16,7 @@ export default function Orders() {
     return (
         <div className="ordersContainer">
             <header className="navbar">
-            <Navbar view='order'/>
+                <Navbar view='order' handleSaveUser={handleSaveUser} />
             </header>
             <main className="main">
             <Menu />
