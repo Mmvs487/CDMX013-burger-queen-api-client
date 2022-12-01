@@ -6,7 +6,7 @@ import logoutButton from "../images/logout.png"
 import newOrderIcon from "../images/new-order-icon.png"
 import completedOrdersIcon from "../images/completed-orders-icon.png"
 
-export function Navbar() {
+export function Navbar({ handleSaveUser }) {
     const navigate = useNavigate();
     /* const newOrders = () =>{
         navigate('/orders');
@@ -14,10 +14,17 @@ export function Navbar() {
     const completedOrders = () =>{
         navigate('/completed-orders');
     }
+
+    const logOut = () => {
+        handleSaveUser(null)
+        localStorage.removeItem("email")
+        navigate('/')
+    }
+    
     return (
     <nav className="nav">
         <div className="defaults">
-        <img className="log-out" src={logoutButton} alt="logout"/>
+        <img className="log-out" src={logoutButton} alt="logout" onClick={logOut}/>
         <img className="title" src={createOrderTitle} alt='page-title'/>
         </div>
         <ul>

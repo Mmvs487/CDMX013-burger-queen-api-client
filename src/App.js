@@ -18,12 +18,12 @@ function App() {
         <Route path="/" element={<Login handleSaveUser={handleSaveUser} rol={rol} />} />
         <Route path="/orders" element={
           <ProtectedRoute rol={rol}>
-            <Orders/>
+            <Orders handleSaveUser={handleSaveUser} />
           </ProtectedRoute>
         } />
         <Route path="/completed-orders" element={
           <ProtectedRoute rol={rol}>
-            <CompletedOrders/>
+            <CompletedOrders handleSaveUser={handleSaveUser} />
           </ProtectedRoute>
         } />
         <Route path="/kitchen" element={
