@@ -1,5 +1,4 @@
-import { authBreakfast } from "../api/authBreakfast"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import './menu.css'
 import Meals from "./Meals";
 import Breakfast from "./Breakfast";
@@ -11,6 +10,7 @@ export default function Menu() {
     const handleButtonClick = (state) => {
         setButtonClicked(state)
     }
+
     
     return (
             <section className="productsContainer">
@@ -18,7 +18,7 @@ export default function Menu() {
                     <p onClick={() => handleButtonClick(false)}>Breakfast</p>
                     <p onClick={() =>handleButtonClick(true)}>Meals</p>
                 </div>
-            {buttonclicked ? <Meals handleButtonClick={handleButtonClick}/> : <Breakfast handleButtonClick={handleButtonClick} />}
+            {buttonclicked ? <Meals /> : <Breakfast/>}
             </section>
         )
 }

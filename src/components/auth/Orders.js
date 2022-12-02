@@ -7,6 +7,7 @@ import "./orders.css"
 export default function Orders({ handleSaveUser }) {
     const activeUser = localStorage.getItem("email");
     console.log(activeUser)
+
     const navigate = useNavigate()
     if (!activeUser) {
         navigate('/')
@@ -16,11 +17,11 @@ export default function Orders({ handleSaveUser }) {
     return (
         <div className="ordersContainer">
             <header className="navbar">
-                <Navbar view='order' handleSaveUser={handleSaveUser} />
+            <Navbar view='order' handleSaveUser={handleSaveUser} />
             </header>
             <main className="main">
-            <Menu />
-            <ConfirmOrder />
+                <Menu />
+                <ConfirmOrder />
             </main>
         </div>
     )
