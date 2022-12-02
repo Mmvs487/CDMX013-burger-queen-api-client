@@ -5,7 +5,8 @@ import upIcon from '../images/expand_circle_up.png'
 import deleteIcon from '../images/delete.png'
 import { useState } from "react";
 
-const ConfirmOrder = ({ dishInfo }) => {
+  
+const ConfirmOrder = () => {
 
   //Pasamos el valor inicial = 0
   const [sumElement, setSumElement] = useState(1);
@@ -31,8 +32,8 @@ const ConfirmOrder = ({ dishInfo }) => {
    ) 
   }; 
   
-
-  return (
+ 
+   return (
     <section className="order-list">
 
       <div className="header-ord-list">

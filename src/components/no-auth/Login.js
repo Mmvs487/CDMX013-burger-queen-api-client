@@ -10,8 +10,7 @@ export default function Login({ handleSaveUser, rol }) {
   const [message, setMessage] = useState(null)
 
   const navigate = useNavigate();
-  console.log("rol", rol)
-  
+    
   useEffect(() => {
      if (rol === 'waiter') {
       navigate('/orders')
