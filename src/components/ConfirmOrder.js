@@ -6,19 +6,12 @@ import deleteIcon from '../images/delete.png'
 import { useState } from "react";
 
   
-const ConfirmOrder = ({ dishSelected }) => {
+const ConfirmOrder = ({ dishSelected, addDishQuantity, reduceDishQuantity }) => {
 
   //Pasamos el valor inicial = 0
   const [sumElement, setSumElement] = useState(1);
   const [total, setTotal] = useState([]);
 
-  // const addElement = () =>{
-  //   setSumElement(sumElement + 1);
-  // }
-
-  // const subtractElement =() =>{
-  //   setSumElement(sumElement - 1);
-  // }
 
   // const deleteElement =()=>{
   //   setTotal(0);
@@ -54,7 +47,7 @@ const ConfirmOrder = ({ dishSelected }) => {
 
       <div className="dishesContainer">
          
-         {dishSelected&&dishSelected.map((product,index) => (
+         {dishSelected.map((product,index) => (
              <div key={index} className="resume">
               <div className="items">
                <p>{product.item.name}</p>
@@ -62,9 +55,9 @@ const ConfirmOrder = ({ dishSelected }) => {
               </div>
 
                 <div className="add-delete-itm">
-               <img src={downIcon} alt='down-icon' />
+               <img src={downIcon} alt='down-icon' onClick={() => reduceDishQuantity(product.item)} />
                 <p>{product.qty}</p>
-               <img src={upIcon} alt="up-icon" />
+               <img src={upIcon} alt="up-icon" onClick={() => addDishQuantity(product.item)} />
                 <img src={deleteIcon} alt="delete-icon" />
             </div>
              
