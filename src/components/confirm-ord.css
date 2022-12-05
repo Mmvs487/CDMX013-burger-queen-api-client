@@ -85,6 +85,7 @@ span{
 
 .dishesContainer{
   background: #e5e4e7;
-  height: 501px
+  height: 501px;
+  overflow: scroll;
 
 }

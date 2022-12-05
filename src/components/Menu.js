@@ -2,27 +2,25 @@ import { useState, useEffect } from "react";
 import './menu.css'
 import menuIcon from "../images/restaurant.png"
 
-export default function Menu({ products }) {
+export default function Menu({ allDishes, addDishQuantity }) {
   
     const [buttonclicked, setButtonClicked] = useState(false);
-    const [data, setData] = useState([])
+    const [dishesInUse, setData] = useState([])
+    const breakfastDishes = allDishes.filter((item) => item.type === "breakfast")
+    const mealsDishes = allDishes.filter((item) => item.type === "meal")
 
     const handleButtonClick = (state) => {
           setButtonClicked(state)
     }
     
-    const breakfast = products.filter((item) => item.type === "breakfast")
-
-    const meals = products.filter((item) => item.type === "meal")
-
-    useEffect(() => { 
+    useEffect(() => {   
         if (buttonclicked === true) {
-            setData(meals)
+            setData(mealsDishes)
         } else {
-           setData(breakfast) 
+            setData(breakfastDishes)
         }
-    }, [products, buttonclicked])
-
+    }, [allDishes,buttonclicked])
+    
     return (
         <section className="productsContainer">
             <div className="productsHeader">
@@ -33,8 +31,8 @@ export default function Menu({ products }) {
                     <p onClick={() => handleButtonClick(true)}>Meals</p>
             </div>
             <div className="breakfastDishes">
-                {data.map(product => (
-                    <div className="breakfastDish" >
+                {dishesInUse.map((product,index) => (
+                    <div key={index} className="breakfastDish" onClick={() => addDishQuantity(product)}>
                         <img src={product.image} alt='food-icon'></img>
                         <div className="containerDish">
                             <h3>{product.name}</h3>

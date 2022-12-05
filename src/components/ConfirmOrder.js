@@ -6,23 +6,23 @@ import deleteIcon from '../images/delete.png'
 import { useState } from "react";
 
   
-const ConfirmOrder = () => {
+const ConfirmOrder = ({ dishSelected }) => {
 
   //Pasamos el valor inicial = 0
   const [sumElement, setSumElement] = useState(1);
   const [total, setTotal] = useState([]);
 
-  const addElement = () =>{
-    setSumElement(sumElement + 1);
-  }
+  // const addElement = () =>{
+  //   setSumElement(sumElement + 1);
+  // }
 
-  const subtractElement =() =>{
-    setSumElement(sumElement - 1);
-  }
+  // const subtractElement =() =>{
+  //   setSumElement(sumElement - 1);
+  // }
 
-  const deleteElement =()=>{
-    setTotal(0);
-  }
+  // const deleteElement =()=>{
+  //   setTotal(0);
+  // }
 
  const totalAccount = () => { 
   total.push(sumElement)
@@ -53,18 +53,25 @@ const ConfirmOrder = () => {
       </div>
 
       <div className="dishesContainer">
-        <div className="resume">
-          <div className="items">
-            <p>Huevos Rancheros</p>
-            <span>$ {(55 * sumElement)}</span>
-          </div>
-          <div className="add-delete-itm">
-            <img src={downIcon} alt='down-icon' onClick={subtractElement} />
-            <p>{sumElement}</p>
-            <img src={upIcon} alt="up-icon" onClick={addElement} />
-            <img src={deleteIcon} alt="delete-icon" onClick={deleteElement} />
-          </div>
-        </div>
+         
+         {dishSelected&&dishSelected.map((product,index) => (
+             <div key={index} className="resume">
+              <div className="items">
+               <p>{product.item.name}</p>
+               <span>${product.item.price}</span>
+              </div>
+
+                <div className="add-delete-itm">
+               <img src={downIcon} alt='down-icon' />
+                <p>{product.qty}</p>
+               <img src={upIcon} alt="up-icon" />
+                <img src={deleteIcon} alt="delete-icon" />
+            </div>
+             
+             </div>
+           ))
+           }
+          
       </div>
     
       <div className="total">
