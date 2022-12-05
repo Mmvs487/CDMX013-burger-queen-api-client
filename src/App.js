@@ -6,6 +6,7 @@ import Admin from './components/auth/Admin.js';
 import { useState } from 'react'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import CompletedOrders from './components/auth/CompletedOrders.js';
+import { Navbar } from './components/Navbar.js';
 
 function App() {
   const [rol, setRol] = useState(null)
@@ -14,7 +15,7 @@ function App() {
   }
   return (
     <BrowserRouter>
-     <Routes>
+           <Routes>
         <Route path="/" element={<Login handleSaveUser={handleSaveUser} rol={rol} />} />
         <Route path="/orders" element={
           <ProtectedRoute rol={rol}>
