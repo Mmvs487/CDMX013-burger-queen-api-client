@@ -4,6 +4,7 @@ import downIcon from '../images/expand_circle_down.png'
 import upIcon from '../images/expand_circle_up.png'
 import deleteIcon from '../images/delete.png'
 import { useState } from "react";
+import Modal from "./Modal";
 
   
 const ConfirmOrder = ({ dishSelected, addDishQuantity, reduceDishQuantity }) => {
@@ -11,20 +12,23 @@ const ConfirmOrder = ({ dishSelected, addDishQuantity, reduceDishQuantity }) => 
   //Pasamos el valor inicial = 0
   const [sumElement, setSumElement] = useState(1);
   const [total, setTotal] = useState([]);
+  const [stateModal, setStateModal] = useState(false)
 
+  const handleModal = (state) => {
+  setStateModal(state )
+  }
 
   // const deleteElement =()=>{
   //   setTotal(0);
   // }
 
- const totalAccount = () => { 
-  total.push(sumElement)
-  total.reduce(
-    (acc, quantity) => acc + quantity,
-    0,
-   ) 
-  }; 
+  // const totalAccount = (dishSelected) => { 
+  // dishSelected.item.price.reduce(
+  //   (acc, quantity) => acc + quantity, 0,
+  //     )
+  // }; 
   
+
  
    return (
     <section className="order-list">
@@ -66,11 +70,17 @@ const ConfirmOrder = ({ dishSelected, addDishQuantity, reduceDishQuantity }) => 
            }
           
       </div>
-    
-      <div className="total">
-        <p>Total: <span>$ {(55 * sumElement)}</span></p>
-        <button className="done-btn">DONE</button>
-      </div>
+          <div className="total">
+         <p>Total: <span>{ }</span></p>
+        <button className="done-btn" onClick={() => handleModal(true)}>DONE</button>
+       </div>
+       <Modal stateModal={stateModal}>
+         <h1> Are you sure you want to submit this order? </h1>
+         <div className="buttonContainer">
+           <button className="yesButton">YES</button>
+           <button className="closeButton" onClick={() => handleModal(false)}> CLOSE </button>
+         </div>
+       </Modal>
     </section>
   );
 };
