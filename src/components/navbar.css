@@ -1,16 +1,6 @@
-*{
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-}
-
 .defaults{
     display: flex;
-    gap: 0rem;
-    padding: 0 1rem;
     align-items: center;
-    gap: 2rem;
 }
 
 .log-out{
@@ -30,33 +20,13 @@ body {
     height: 69px;
 }
 
-/*.user-email{
-    width: 217px;
-    height: 26px;
-    left: 753px;
-    top: 58.22px;
-    
-    font-family: 'Hind Siliguri';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 32px;
-    color: #000000;
-}*/
-
 .navbar{
     display: flex;
     flex-direction: row;
     height: 98px;
     width: 1132px;
-    gap: 2rem;
     padding: 0 1rem;
 }
-
-/* .defaults{
-    display: flex;
-    justify-content: space-around;
-} */
 
 .dynamicIcons{
     display: flex;
@@ -67,4 +37,5 @@ body {
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
+    margin-left: 210px;
 }

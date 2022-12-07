@@ -71,8 +71,8 @@ export default function Orders({ handleSaveUser }) {
                 <img className="title" src={createOrderTitle} alt='page-title'/>
                 <div className="dynamicIcons">
                     <p className="user-email">{activeUser}</p>
-                    <img className="dynamicIcons" src={newOrderIcon} alt='create-order'/>
-                    <img className="dynamicIcons" src={completedOrdersIcon} alt='completed-orders' onClick={completedOrders}/>
+                    <img className="newOrderIcon" src={newOrderIcon} alt='create-order'/>
+                    <img className="completedOrderIcon" src={completedOrdersIcon} alt='completed-orders' onClick={completedOrders}/>
                 </div>
             </Navbar>
             </header>
