@@ -22,7 +22,6 @@ body {
     top: 30.22px;
 }
 
-
 .title{
     align-self: center;
     font-size: 2rem;
@@ -30,7 +29,7 @@ body {
     height: 69px;
 }
 
-/*.user-email{
+.user-email{
     width: 217px;
     height: 26px;
     left: 753px;
@@ -42,29 +41,52 @@ body {
     font-size: 20px;
     line-height: 32px;
     color: #000000;
-}*/
+}
 
-.navbar{
+.defaults{
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav{
     height: 98px;
-    width: 1132px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
     gap: 2rem;
     padding: 0 1rem;
 }
 
-/* .defaults{
-    display: flex;
-    justify-content: space-around;
-} */
-
-.dynamicIcons{
-    display: flex;
-    justify-content: space-around;
+.nav ul {
+    padding: 0;
+    margin: 0;
     align-items: center;
-    font-family: 'Hind Siliguri';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 32px;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex; 
+    align-items: center;
+    padding: .2rem;
+}
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav li:hover{
+    background-color: beige;
+}
+.nav li.active{
+    text-decoration: underline;
 }

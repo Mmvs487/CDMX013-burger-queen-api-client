@@ -4,20 +4,12 @@ import Menu from '../Menu.js'
 import "./orders.css"
 import { useEffect, useState } from "react";
 import { authBreakfast } from "../../api/authBreakfast";
-import { useNavigate } from "react-router-dom";
-import createOrderTitle from "../../images/create-order-text.png"
-import newOrderIcon from "../../images/new-order-icon.png"
-import completedOrdersIcon from "../../images/completed-orders-icon.png"
 
 export default function Orders({ handleSaveUser }) {
 
     const activeUser = localStorage.getItem("email");
-    const navigate = useNavigate();
     const [allDishes, setallDishes] = useState([]);
     const [dishSelected, setdishSelected] = useState([]);
-    const completedOrders = () =>{
-        navigate('/completed-orders')
-    }
    
     useEffect(() => {
         authBreakfast().then(setallDishes) 
@@ -67,14 +59,7 @@ export default function Orders({ handleSaveUser }) {
     return (
         <div className="ordersContainer">
             <header className="navbar">
-            <Navbar view='order' handleSaveUser={handleSaveUser}>
-                <img className="title" src={createOrderTitle} alt='page-title'/>
-                <div className="dynamicIcons">
-                    <p className="user-email">{activeUser}</p>
-                    <img className="dynamicIcons" src={newOrderIcon} alt='create-order'/>
-                    <img className="dynamicIcons" src={completedOrdersIcon} alt='completed-orders' onClick={completedOrders}/>
-                </div>
-            </Navbar>
+            <Navbar view='order' handleSaveUser={handleSaveUser} />
             </header>
             <main className="main">
                 <Menu allDishes={allDishes} addDishQuantity={addDishQuantity} />
