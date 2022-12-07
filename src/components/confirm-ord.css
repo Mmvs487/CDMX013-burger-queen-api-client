@@ -57,7 +57,7 @@
 
 .total {
   display: flex;
-  height: 96px;
+  height: 84px;
   background-color: #bdbcc2;
   border: 1px solid #928f99;
   padding: 0px 30px;
@@ -86,6 +86,6 @@ span{
 
 .dishesContainer{
   background: #e5e4e7;
-  height: 501px;
+  height: 497px;
   overflow: auto;
 }
