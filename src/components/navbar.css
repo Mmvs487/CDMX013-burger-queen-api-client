@@ -22,6 +22,7 @@ body {
     top: 30.22px;
 }
 
+
 .title{
     align-self: center;
     font-size: 2rem;
@@ -29,7 +30,7 @@ body {
     height: 69px;
 }
 
-.user-email{
+/*.user-email{
     width: 217px;
     height: 26px;
     left: 753px;
@@ -41,52 +42,29 @@ body {
     font-size: 20px;
     line-height: 32px;
     color: #000000;
-}
+}*/
 
-.defaults{
+.navbar{
     display: flex;
-    justify-content: space-around;
-}
-
-.nav{
+    flex-direction: row;
     height: 98px;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+    width: 1132px;
     gap: 2rem;
     padding: 0 1rem;
 }
 
-.nav ul {
-    padding: 0;
-    margin: 0;
-    align-items: center;
-    list-style: none;
+/* .defaults{
     display: flex;
-    gap: 1rem;
-}
+    justify-content: space-around;
+} */
 
-.nav a {
-    color: inherit;
-    text-decoration: none;
-    height: 100%;
-    display: flex; 
-    align-items: center;
-    padding: .2rem;
-}
-
-.nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+.dynamicIcons{
     display: flex;
-    gap: 1rem;
-}
-
-.nav li:hover{
-    background-color: beige;
-}
-.nav li.active{
-    text-decoration: underline;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Hind Siliguri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
 }
