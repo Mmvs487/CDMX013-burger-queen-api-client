@@ -27,8 +27,8 @@ export default function Menu({ allDishes, addDishQuantity }) {
                 <div>
                     <img src={menuIcon} alt='menu-icon'></img>
                 </div>
-                    <p onClick={() => handleButtonClick(false)}>Breakfast</p>
-                    <p onClick={() => handleButtonClick(true)}>Meals</p>
+                    <p className="textUnderline" onClick={() => handleButtonClick(false)}>Breakfast</p>
+                    <p className="textUnderline" onClick={() => handleButtonClick(true)}>Meals</p>
             </div>
             <div className="breakfastDishes">
                 {dishesInUse.map((product,index) => (
