@@ -2,9 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
 
 .overlay {
-/* display: flex; 
-align-items: center;
-justify-content: center; */
 position: fixed;
 width: 100vw; 
 height: 100vh; 
@@ -21,8 +18,8 @@ background-color: rgb(0,0,0,.5);
     height: 250px;
     background-color: #D9D9D9;
     position: relative;
-    top:274px;
-    left: 355px;
+    top:250px;
+    left: 550px;
     border-radius: 20px; 
     padding: 40px;
 
