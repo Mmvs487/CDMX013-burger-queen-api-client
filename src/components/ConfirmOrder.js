@@ -15,10 +15,15 @@ const ConfirmOrder = ({
 }) => {
   const [stateModal, setStateModal] = useState(false);
   const [clientName, setClientName] = useState("");
-  console.log("client name", clientName)
+  const activeUser = localStorage.getItem("email");
+  
 
   const handleModal = (state) => {
-    setStateModal(state);
+    if (clientName === "" ) {
+      alert("falta el nombre del cliente")
+    } else {
+      setStateModal(state);
+    }
   };
 
   const sumAllDishes = () => {
@@ -35,11 +40,15 @@ const ConfirmOrder = ({
 
   const addClientName = ( ) => {
     const date = new Date().toLocaleString()
-    // const newData = { dishes: [ ...dishSelected ], clientName: clientName, dateCreated: date }
-
-    const newData = [{ ...dishSelected, clientName: clientName, dateCreated: date }]
+    console.log("disSelected", dishSelected)
+     const newData = { products: dishSelected, client: clientName, dateEntry: date, userId: activeUser }
      return newData;
-}
+  }
+  
+  const confirmOrder = () => { 
+    postOrders(addClientName())
+    setStateModal(false)
+   }
 
   return (
     <section className="order-list">
@@ -56,6 +65,7 @@ const ConfirmOrder = ({
             placeholder="Client-name"
             className="client-name"
             onChange={(e) => setClientName(e.target.value)}
+            required
           />
         </div>
       </div>
@@ -97,7 +107,7 @@ const ConfirmOrder = ({
       <Modal stateModal={stateModal} dishSelected={dishSelected}>
         <h1> Are you sure you want to submit this order? </h1>
         <div className="buttonContainer">
-          <button className="yesButton" onClick={() => postOrders(addClientName())}>YES</button>
+          <button className="yesButton" onClick={() => confirmOrder()}>YES</button>
           <button className="closeButton" onClick={() => handleModal(false)}>
             {" "}
             CLOSE{" "}
