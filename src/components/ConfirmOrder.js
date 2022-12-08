@@ -5,6 +5,7 @@ import upIcon from "../images/expand_circle_up.png";
 import deleteIcon from "../images/delete.png";
 import { useState } from "react";
 import Modal from "./Modal";
+import postOrders from "../api/postOrders";
 
 const ConfirmOrder = ({
   dishSelected,
@@ -13,6 +14,8 @@ const ConfirmOrder = ({
   deleteDish,
 }) => {
   const [stateModal, setStateModal] = useState(false);
+  const [clientName, setClientName] = useState("");
+  console.log("client name", clientName)
 
   const handleModal = (state) => {
     setStateModal(state);
@@ -30,12 +33,13 @@ const ConfirmOrder = ({
     return <span> $ {sumInArray}</span>
   };
 
-/*   const deleteDish = () => {
-    dishSelected.forEach((dish) => {
-     dishSelected.splice(dish.item, 1)
-     console.log(dishSelected)
-    });
-  }; */
+  const addClientName = ( ) => {
+    const date = new Date().toLocaleString()
+    // const newData = { dishes: [ ...dishSelected ], clientName: clientName, dateCreated: date }
+
+    const newData = [{ ...dishSelected, clientName: clientName, dateCreated: date }]
+     return newData;
+}
 
   return (
     <section className="order-list">
@@ -49,8 +53,9 @@ const ConfirmOrder = ({
           <input
             type="text"
             name="client-name"
-            placeholder="Client name"
+            placeholder="Client-name"
             className="client-name"
+            onChange={(e) => setClientName(e.target.value)}
           />
         </div>
       </div>
@@ -89,10 +94,10 @@ const ConfirmOrder = ({
         </button>
       </div>
 
-      <Modal stateModal={stateModal}>
+      <Modal stateModal={stateModal} dishSelected={dishSelected}>
         <h1> Are you sure you want to submit this order? </h1>
         <div className="buttonContainer">
-          <button className="yesButton">YES</button>
+          <button className="yesButton" onClick={() => postOrders(addClientName())}>YES</button>
           <button className="closeButton" onClick={() => handleModal(false)}>
             {" "}
             CLOSE{" "}
