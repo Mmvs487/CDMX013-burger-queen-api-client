@@ -78,7 +78,7 @@ export default function Orders({ handleSaveUser }) {
             </header>
             <main className="main">
                 <Menu allDishes={allDishes} addDishQuantity={addDishQuantity} />
-                <ConfirmOrder dishSelected={dishSelected} addDishQuantity={addDishQuantity} reduceDishQuantity={reduceDishQuantity } deleteDish = {deleteDish}/>
+                <ConfirmOrder dishSelected={dishSelected} addDishQuantity={addDishQuantity} reduceDishQuantity={reduceDishQuantity} deleteDish={deleteDish} setdishSelected={setdishSelected } />
             </main>
         </div>
     )
