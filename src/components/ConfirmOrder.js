@@ -15,8 +15,13 @@ const ConfirmOrder = ({
 }) => {
   const [stateModal, setStateModal] = useState(false);
   const [clientName, setClientName] = useState("");
+  const [dishContainer, setdishContainer] = useState([]) // Agregué la variable dishContainer
   const activeUser = localStorage.getItem("email");
   
+  //tambien este useEffecte para setear el estado 
+  useEffect(() => {
+    setdishContainer(dishSelected)
+  },[dishSelected])
 
   const handleModal = (state) => {
     if (clientName === "" ) {
@@ -25,6 +30,7 @@ const ConfirmOrder = ({
       setStateModal(state);
     }
   };
+
 
   const sumAllDishes = () => {
     const arraySum = [];
@@ -40,15 +46,20 @@ const ConfirmOrder = ({
 
   const addClientName = ( ) => {
     const date = new Date().toLocaleString()
-    console.log("disSelected", dishSelected)
-     const newData = { products: dishSelected, client: clientName, dateEntry: date, userId: activeUser }
-     return newData;
+    console.log("dishSelected", dishSelected)
+    const newData = { products: dishSelected, client: clientName, dateEntry: date, userId: activeUser, status: "pending" }
+    return newData;
   }
-  
+
+  //Agregue volver a setear disContainer a [] cuando se envie la orden, intente setear el nombre del cliente 
+  //pero ni idea porque no vuelve a vacio 
   const confirmOrder = () => { 
     postOrders(addClientName())
     setStateModal(false)
-   }
+    setdishContainer([])
+    setClientName("")
+  }
+  
 
   return (
     <section className="order-list">
