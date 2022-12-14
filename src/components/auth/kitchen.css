@@ -1,0 +1,13 @@
+
+.Kitchen {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainKitchen{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    height: 700px;
+   
+}

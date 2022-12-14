@@ -33,8 +33,8 @@ export default function Menu({ allDishes, addDishQuantity }) {
             <div className="breakfastDishes">
                 {dishesInUse.map((product,index) => (
                     <div key={index} className="breakfastDish" onClick={() => addDishQuantity(product)}>
-                        <img src={product.image} alt='food-icon'></img>
-                        <div className="containerDish">
+                    <img src={product.image} alt='food-icon'></img>
+                    <div className="containerDish">
                             <h3>{product.name}</h3>
                             <p>{product.description}</p>
                         </div>

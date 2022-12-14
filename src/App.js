@@ -29,7 +29,7 @@ function App() {
         } />
         <Route path="/kitchen" element={
           <ProtectedRoute rol={rol}>
-          <Kitchen />
+            <Kitchen handleSaveUser={handleSaveUser} />
           </ProtectedRoute>
         } />
         <Route path="/Admin" element={
