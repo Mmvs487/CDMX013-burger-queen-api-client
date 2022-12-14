@@ -30,9 +30,12 @@ export default function Orders({ handleSaveUser }) {
             let element = state.filter(each => each.item.id === product.id)
             let oldElments = state.filter(each => each.item.id !== product.id)
             if (element.length === 0) {
+                console.log("nuevo elemento")
                 return [...state, { qty: 1, item: product }]
             } else if (element.length !== 0) {
+                console.log("elemento repetido")
                 const newElement = { ...element[0] }
+                // console.log("newElement", newElement)
                 newElement.qty = newElement.qty+1
                 return [...oldElments, newElement  ]
             }        
