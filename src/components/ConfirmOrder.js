@@ -16,7 +16,6 @@ const ConfirmOrder = ({
   const [stateModal, setStateModal] = useState(false);
   const [clientName, setClientName] = useState("");
   const activeUser = localStorage.getItem("email");
-  
 
   const handleModal = (state) => {
     if (clientName === "" ) {
@@ -41,7 +40,7 @@ const ConfirmOrder = ({
   const addClientName = ( ) => {
     const date = new Date().toLocaleString()
     console.log("disSelected", dishSelected)
-     const newData = { products: dishSelected, client: clientName, dateEntry: date, userId: activeUser }
+     const newData = { products: dishSelected, client: clientName, dateEntry: date, userId: activeUser, status: "pending" }
      return newData;
   }
   

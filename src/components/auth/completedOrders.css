@@ -1,0 +1,21 @@
+.ordersContainer{
+    width: 100%;
+}
+
+
+.main{
+    display: grid;
+}
+
+.table{
+    width: 93vw;
+    height: 98vh;
+}
+
+.headers{
+    height: 45px;
+}
+
+.ordersList{
+    height: 45px;
+}
