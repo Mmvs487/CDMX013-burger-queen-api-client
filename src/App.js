@@ -34,7 +34,7 @@ function App() {
         } />
         <Route path="/Admin" element={
           <ProtectedRoute rol={rol}>
-            <Admin />
+            <Admin handleSaveUser={handleSaveUser} />
           </ProtectedRoute>
         } /> 
      </Routes>

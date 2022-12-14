@@ -69,7 +69,6 @@ const ConfirmOrder = ({
             placeholder="Client-name"
             className="client-name"
             onChange={(e) => setClientName(e.target.value)}
-            required
           />
         </div>
       </div>
