@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "./navbar.css"
 import logoutButton from "../images/logout.png"
