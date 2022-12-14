@@ -6,7 +6,6 @@ import Admin from './components/auth/Admin.js';
 import { useState } from 'react'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import CompletedOrders from './components/auth/CompletedOrders.js';
-import { Navbar } from './components/Navbar.js';
 
 function App() {
   const [rol, setRol] = useState(null)
