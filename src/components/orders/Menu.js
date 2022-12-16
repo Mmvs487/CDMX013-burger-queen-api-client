@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import './menu.css'
-import menuIcon from "../images/restaurant.png"
+import menuIcon from "../../images/restaurant.png"
 
 export default function Menu({ allDishes, addDishQuantity }) {
   
