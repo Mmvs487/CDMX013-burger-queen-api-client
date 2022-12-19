@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Bayon&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+
+.overlay {
+position: fixed;
+width: 100vw; 
+height: 100vh; 
+top: 0; 
+left: 0;
+background-color: rgb(0,0,0,.5);
+
+}
+
+.modalContainer {
+    display: flex; 
+    flex-direction: column;
+    width: 500px; 
+    height: 250px;
+    background-color: #D9D9D9;
+    position: relative;
+    top:250px;
+    left: 550px;
+    border-radius: 20px; 
+    padding: 40px;
+
+}
+
+.modalContainer > h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+}
+
+.buttonContainer > button { 
+    border-radius: 20px;
+    font-family: 'Bayon', sans-serif;
+    font-size: 30px;
+    border: 0px;
+    width: 95px;
+    height: 51px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.closeButton {
+background-color: #F47923;
+
+}
+
+.yesButton {
+background-color: #7FF423;
+}     

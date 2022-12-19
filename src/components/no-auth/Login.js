@@ -3,25 +3,23 @@ import "./login.css";
 import { useEffect, useState } from 'react';
 import authUsers from '../../api/authUsers.js'
 import { useNavigate } from 'react-router-dom'
-import { redirect } from "react-router-dom";
 
 export default function Login({ handleSaveUser, rol }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(null)
-  const navigate = useNavigate();
 
-  console.log("rol", rol);
-  
+  const navigate = useNavigate();
+    
   useEffect(() => {
-      if (rol === 'waiter') {
+     if (rol === 'waiter') {
       navigate('/orders')
     } else if (rol === 'kitchen') {
       navigate('/kitchen')
     } else if (rol === 'admin') {
       navigate('/admin')
-    }
-  })
+    } 
+  }, [rol])
 
     const handlePrintMessage = (message) => {
       setMessage(message)
