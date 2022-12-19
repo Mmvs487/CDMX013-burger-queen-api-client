@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { authOrdersInKitchen } from "../api/authOrdersInKitchen"
+import { authOrdersInKitchen } from "../../api/authOrdersInKitchen"
 import './orderInKitchen.css'
 
 

@@ -1,6 +1,6 @@
-import ConfirmOrder from "../ConfirmOrder";
+import ConfirmOrder from "../orders/ConfirmOrder";
 import { Navbar } from "../Navbar";
-import Menu from '../Menu.js'
+import Menu from '../orders/Menu.js'
 import "./orders.css"
 import { useEffect, useState } from "react";
 import { authBreakfast } from "../../api/authBreakfast";
@@ -24,7 +24,7 @@ export default function Orders({ handleSaveUser }) {
     },[])
    
 
-
+//Add dish in ticket
     const addDishQuantity = (product) => {
         setdishSelected((state) => {
             let element = state.filter(each => each.item.id === product.id)
@@ -34,10 +34,11 @@ export default function Orders({ handleSaveUser }) {
                 return [...state, { qty: 1, item: product }]
             } else if (element.length !== 0) {
                 console.log("elemento repetido")
+                //Accessing to object
                 const newElement = { ...element[0] }
                 // console.log("newElement", newElement)
                 newElement.qty = newElement.qty+1
-                return [...oldElments, newElement  ]
+                return [...oldElments, newElement]
             }        
         })
     }                                               
@@ -58,11 +59,8 @@ export default function Orders({ handleSaveUser }) {
 
     const deleteDish = (product) => {
         setdishSelected((state) => {
-            let element = state.filter(each => each.item.id === product.id)
-            let oldElments = state.filter(each => each.item.id !== product.id)
-            const newElement = { ...element[0] }
-            newElement.qty = newElement.qty - 1
-            return [...oldElments]
+            let oldElments = state.filter(each => each.item.id !== product.id);
+            return [...oldElments];
         })
     }
 

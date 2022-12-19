@@ -31,16 +31,18 @@ export default function Admin({ handleSaveUser }) {
 
   console.log(allUsers)
 
+  const sendNewUser = () => {
+    //setAllUser([...allUsers, addUser()])
+    postUsers(addUser())
+    setStateModal(false)
+  }
+
   useEffect(() => {
     getUsers().then(setAllUser);
   }, []);
 
 
-  const sendNewUser = () => {
-    setAllUser([...allUsers, addUser()])
-    postUsers(addUser())
-    setStateModal(false)
-  }
+
 
   return (
     <div>

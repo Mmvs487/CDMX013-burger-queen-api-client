@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import './menu.css'
-import menuIcon from "../images/restaurant.png"
+import menuIcon from "../../images/restaurant.png"
 
 export default function Menu({ allDishes, addDishQuantity }) {
   
     const [buttonclicked, setButtonClicked] = useState(false);
-    const [dishesInUse, setData] = useState([])
+    const [dishesInUse, setDishesInUse] = useState([])
     const breakfastDishes = allDishes.filter((item) => item.type === "breakfast")
     const mealsDishes = allDishes.filter((item) => item.type === "meal")
 
@@ -15,9 +15,9 @@ export default function Menu({ allDishes, addDishQuantity }) {
     
     useEffect(() => {   
         if (buttonclicked === true) {
-            setData(mealsDishes)
+            setDishesInUse(mealsDishes)
         } else {
-            setData(breakfastDishes)
+            setDishesInUse(breakfastDishes)
         }
     }, [allDishes,buttonclicked])
     
