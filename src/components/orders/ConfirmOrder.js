@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import "./confirm-ord.css";
-import downIcon from "../images/expand_circle_down.png";
-import upIcon from "../images/expand_circle_up.png";
-import deleteIcon from "../images/delete.png";
+import downIcon from "../../images/expand_circle_down.png";
+import upIcon from "../../images/expand_circle_up.png";
+import deleteIcon from "../../images/delete.png";
 import { useState } from "react";
-import Modal from "./Modal";
-import postOrders from "../api/postOrders";
+import Modal from ".././Modal";
+import postOrders from "../../api/postOrders";
 
 const ConfirmOrder = ({
   dishSelected,
@@ -66,6 +66,7 @@ const ConfirmOrder = ({
           <input
             type="text"
             name="client-name"
+            value={clientName}
             placeholder="Client-name"
             className="client-name"
             onChange={(e) => setClientName(e.target.value)}

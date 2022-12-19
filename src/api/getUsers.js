@@ -16,9 +16,9 @@ export const getUsers = () =>{
 }
 
 export const postUsers = (newUser) => {
-  axios.post(apiUsers, newUser)
+  return axios.post(apiUsers, newUser)
       .then(response => {
-          console.log(response)
+          return response.data
       })
       .catch(error => {
           console.log('Error', error)

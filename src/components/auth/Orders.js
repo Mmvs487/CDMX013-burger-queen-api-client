@@ -1,6 +1,6 @@
-import ConfirmOrder from "../ConfirmOrder";
+import ConfirmOrder from "../orders/ConfirmOrder.js";
 import { Navbar } from "../Navbar";
-import Menu from '../Menu.js'
+import Menu from '../orders/Menu.js'
 import "./orders.css"
 import { useEffect, useState } from "react";
 import { authBreakfast } from "../../api/authBreakfast";

@@ -29,17 +29,25 @@ export default function Admin({ handleSaveUser }) {
     return newUser
   }
 
-  console.log(allUsers)
+  // console.log(allUsers)
 
   useEffect(() => {
     getUsers().then(setAllUser);
+    // fetchUsers()
   }, []);
 
+  // const fetchUsers = () => {
+  //   getUsers().then(setAllUser);
+  // }
 
   const sendNewUser = () => {
-    setAllUser([...allUsers, addUser()])
-    postUsers(addUser())
-    setStateModal(false)
+    const resultPromise = postUsers(addUser())
+    resultPromise.then((newUser) => {
+      setAllUser([...allUsers, newUser])
+      // fetchUsers()
+      setStateModal(false)
+    })
+    
   }
 
   return (

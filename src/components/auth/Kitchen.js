@@ -1,4 +1,4 @@
-import OrdersInKitchen from "../OrdersInKitchen"
+import OrdersInKitchen from "../kitchen/OrdersInKitchen"
 import { Navbar } from "../Navbar"
 import pendingOrder from '../../images/pending-order.png'
 import inProcess from '../../images/in-process.png'
