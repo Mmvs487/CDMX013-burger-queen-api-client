@@ -1,0 +1,41 @@
+.defaults{
+    display: flex;
+    align-items: center;
+}
+
+.log-out{
+    margin: 0;
+    gap: 0;
+    width: 43px;
+    height: 76px;
+    left: 30px;
+    top: 30.22px;
+}
+
+
+.title{
+    align-self: center;
+    font-size: 2rem;
+    width: 430px;
+    height: 69px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    height: 98px;
+    width: 1132px;
+    padding: 0 1rem;
+}
+
+.dynamicIcons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Hind Siliguri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    margin-left: 640px;
+}

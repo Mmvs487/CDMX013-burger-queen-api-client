@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Bayon&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+
+.productsContainer {
+    background-color: #FCE2D0;
+    
+}
+
+.productsHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #F47923;
+    padding: 20px;
+    font-family: "Bayon", sans-serif;
+    font-size: 30px;
+}
+.breakfastDish{
+    display: grid;
+    grid-template-columns: 25% 65% 10%;
+    align-items: center;
+    padding: 5px; 
+    border-bottom: 1px solid;
+    border-bottom-color:  #F47923;
+}
+
+.containerDish > p{
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+.containerDish>h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+.containerDish{
+    margin-right: 10px;
+}
+
+.breakfastDish > img {
+    width: 112px;
+    height: 72px;
+    padding: 5px 5px;
+}
+
+.textUnderline:active{
+text-decoration: underline;
+}

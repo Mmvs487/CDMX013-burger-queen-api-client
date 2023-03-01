@@ -9,7 +9,7 @@ const authUsers = (emailValue, passwordValue, callBack) => {
    
     if (emailValue === "" || passwordValue === "") {
       callBack("PLEASE ENTER YOUR LOGIN CREDENTIALS");
-      return console.log("invalid");
+      return null
     } else {
 
       return axios
@@ -20,17 +20,18 @@ const authUsers = (emailValue, passwordValue, callBack) => {
             if (data.user !== emailValue) {
               callBack('Invalid credentials, please contact your admin')
             } else if (data.user === emailValue) {
+              localStorage.setItem("email", data.user)
               newArray.push(data.role)
-              console.log("array", newArray)
-              callBack("valid")
+             
+              callBack("VALID")
             } else {
-              callBack("invalid");
+              callBack("INVALID");
             }
           });
           resolve(newArray)
         })
         .catch((err) => {
-          console.log(err);
+          return err
         });
     };
   })
