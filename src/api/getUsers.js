@@ -24,4 +24,3 @@ export const postUsers = (newUser) => {
           console.log('Error', error)
       })
 };
-
